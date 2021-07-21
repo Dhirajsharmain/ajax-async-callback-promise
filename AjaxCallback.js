@@ -45,12 +45,12 @@ const deleteURL = "http://127.0.0.1:3000/employee/2";
 function userDeleted(data){
     console.log("User Deleted at:" + showTime() + " data: " + data);
 }
-makeAJAXCall("GET", deleteURL, userDeleted, true);
+makeAJAXCall("DELETE", deleteURL, userDeleted, false);
 
 const postURL = "http://127.0.0.1:3000/employee";
 const emplData = {"name": "Harry","salary": "30000"};
 function userAdded(data){
-    console.log("User Addedat:" + showTime() + " data: " + data);
+    console.log("User Added at:" + showTime() + " data: " + data);
 }
-makeAJAXCall("GET", postURL, userAdded, true, emplData);
+makeAJAXCall("POST", postURL, userAdded, true, emplData);
 //curl Request:  curl -X GET -H "Content-Type: application/json" "http://127.0.0.1:3000/employee/" -w "\n"
